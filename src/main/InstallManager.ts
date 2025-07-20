@@ -9,8 +9,18 @@ import { ipcMain, WebContents } from 'electron';
 import fs from 'fs';
 import { promisify } from 'util';
 import path from 'path';
+import { Addon } from 'renderer/utils/InstallerConfiguration';
 
 let lastProgressSent = 0;
+
+export async function fetchAddonList(simVersion: string): Promise<Addon[]> {
+  const url = `https://raw.githubusercontent.com/TriTriTheCuber/TFX/refs/heads/main/alpha/${simVersion}/version.json`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("Não conseguiu carregar version.json");
+
+  const data = await response.json();
+  return data.addons;
+}
 
 export class InstallManager {
   static async install(
@@ -111,6 +121,15 @@ export class InstallManager {
 
     if (communityPackageDirExists) {
       await fs.promises.rm(communityPackageDir, { recursive: true });
+      /* var exec = require('child_process').execFile;
+
+      var opt = function(){
+            exec('modulehandler.exe', [, communityPackageDir, "arg3"], function(err, data) {  
+              console.log(err)
+              console.log(data.toString());                       
+          });  
+      }
+      opt(); */
     }
 
     for (const packageCacheDir of packageCacheDirs) {

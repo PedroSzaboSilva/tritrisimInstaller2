@@ -1,10 +1,10 @@
 {
-  "name": "headwind-installer",
-  "productName": "Headwind Simulations Installer",
+  "name": "tritrisim-installer",
+  "productName": "TriTriSim TFX Installer",
   "version": "1.6.0-dev.1",
   "description": "Desktop application to install and customize Headwind Simulation addons",
   "configUrls": {
-    "production": "https://cdn.headwindsim.net/installer/config/production.json",
+    "production": "https://raw.githubusercontent.com/PedroSzaboSilva/Images/refs/heads/main/production.json",
     "confidentialBaseUrl": "https://cdn.headwindsim.net/installer/config/confidential"
   },
   "main": "out/main/index.js",
@@ -17,16 +17,16 @@
     "lint:fix": "eslint --fix --ext .ts,.tsx ."
   },
   "keywords": [],
-  "author": "Headwind Simulations",
+  "author": "TriTriSim Simulations",
   "license": "GPL-3.0",
   "build": {
     "extraResources": [
       "./extraResources/**"
     ],
-    "appId": "com.headwind.installer",
+    "appId": "com.tritrisim.installer",
     "nsis": {
       "include": "scripts/installer.nsh",
-      "artifactName": "Headwind_Installer_Setup.${ext}"
+      "artifactName": "TriTriSim_Installer_Setup.${ext}"
     },
     "win": {
       "target": "nsis",
@@ -93,7 +93,7 @@
     "tailwindcss": "^3.4.1",
     "ts-loader": "^8.0.15",
     "ts-node": "^9.1.1",
-    "typescript": "^5.3.3",
+    "typescript": "^5.8.3",
     "url-loader": "^4.1.1",
     "vite": "^5.4.1",
     "vite-plugin-commonjs-externals": "^0.1.4",

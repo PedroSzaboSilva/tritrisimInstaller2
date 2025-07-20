@@ -175,7 +175,7 @@ const schema: Schema<RendererSettings> = {
       },
       useCdnCache: {
         type: 'boolean',
-        default: true,
+        default: false,
       },
       dateLayout: {
         type: 'string',

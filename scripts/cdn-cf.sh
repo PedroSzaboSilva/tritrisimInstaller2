@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CDN_URL="https://cdn.headwindsim.net"
+CDN_URL="https://raw.githubusercontent.com/TriTriTheCuber/TFX/refs/heads/main/alpha/2020/version.json"
 CDN_PURGE_LINK="https://cdn.headwindsim.net/purgeCache?url=https://cdn.headwindsim.net"
 CDN_DIR=${1:-"installer/test"}
 LOCAL_DIR=${2:-"./dist"}

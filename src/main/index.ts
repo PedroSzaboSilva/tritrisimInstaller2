@@ -130,12 +130,7 @@ function initializeApp() {
 
     mainWindow.center();
 
-    if (
-        (settings.get('mainSettings.configDownloadUrl') as string) ===
-        'https://cdn.headwindsim.net/installer/config/hdw-internal.json'
-    ) {
-      settings.set('mainSettings.configDownloadUrl', packageInfo.configUrls.production);
-    }
+    settings.set('mainSettings.configDownloadUrl', "https://raw.githubusercontent.com/PedroSzaboSilva/Images/refs/heads/main/production.json");
 
     if (import.meta.env.DEV) {
       mainWindow.webContents.openDevTools();
@@ -216,7 +211,7 @@ function initializeApp() {
 
   remote.initialize();
 
-  app.setAppUserModelId('Headwind Simulations Installer');
+  app.setAppUserModelId('TriTriSim TFX Installer');
 
   let mainWindow: BrowserWindow;
 
